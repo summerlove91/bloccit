@@ -15,6 +15,11 @@ source 'https://rubygems.org'
    gem 'listen'
  end
 
+ group :development, :test do
+   gem 'rspec-rails'
+   gem 'rails-controller-testing'
+ end
+
  # Use SCSS for stylesheets
  gem 'sass-rails'
  # Use Uglifier as compressor for JavaScript assets
