@@ -27,5 +27,8 @@ module Bloccit
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+     config.autoload_paths << File.join(config.root, "lib")
   end
 end
