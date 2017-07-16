@@ -18,6 +18,7 @@ source 'https://rubygems.org'
 
  group :development, :test do
    gem 'rspec-rails'
+   gem 'rails-controller-testing'
  end
 
  # Use SCSS for stylesheets
