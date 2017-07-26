@@ -5,12 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
+# require 'random_data'
+# include RandomData
 require 'random_data'
+
+15.times do
+   Topic.create!(
+     name:         RandomData.random_sentence,
+     description:  RandomData.random_paragraph
+   )
+ end
+ topics = Topic.all
+
 
  50.times do
    Post.create!(
+     topic:  topics.sample,
      title:  RandomData.random_sentence,
      body:   RandomData.random_paragraph
    )
@@ -24,10 +34,21 @@ require 'random_data'
    )
  end
 
- puts "#{Post.count}"
+ # 100.times do
+ #    Question.create!(
+ #    title: RandomData.random_sentence,
+ #    body: RandomData.random_paragraph,
+ #    resolved: false
+ #    )
+ #  end
+
+
+ # puts "#{Post.count}"
  Post.find_or_create_by(title: "A unique title", body: "A unique body")
  puts "#{Post.count}"
 
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ # puts "#{Question.count} questions created"
+ puts "#{Topic.count} topics created"
