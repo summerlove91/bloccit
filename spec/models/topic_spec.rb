@@ -7,6 +7,11 @@ RSpec.describe Topic, type: :model do
    let(:topic) { Topic.create!(name: name, description: description) }
 
    it { is_expected.to have_many(:posts) }
+<<<<<<< HEAD
+=======
+  #  it { is_expected.to have_many(:sponsored_posts) }
+
+>>>>>>> bloccit-checkpoint22
    describe "attributes" do
      it "has name, description, and public attributes" do
        expect(topic).to have_attributes(name: name, description: description, public: public)

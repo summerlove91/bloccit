@@ -23,4 +23,8 @@ module RandomData
      letters.shuffle!
      letters[0,rand(3..8)].join
    end
+
+   def self.random_dollar
+     "$" + rand(1..300).to_s
+   end
  end

@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bloccit-checkpoint22
   def show
     @post = Post.find(params[:id])
   end
 
   def new
+    @topic = Topic.find(params[:topic_id])
     @post = Post.new
     @topic = Topic.find(params[:topic_id])
   end
