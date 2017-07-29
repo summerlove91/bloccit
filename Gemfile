@@ -19,6 +19,7 @@ source 'https://rubygems.org'
  group :development, :test do
    gem 'rspec-rails' , '~> 3.6'
    gem 'rails-controller-testing'
+   gem 'shoulda'
  end
 
  # Use SCSS for stylesheets
@@ -32,4 +33,3 @@ source 'https://rubygems.org'
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  gem 'turbolinks'
  gem 'bootstrap-sass'
- gem 'random_data'
