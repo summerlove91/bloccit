@@ -2,10 +2,7 @@ Rails.application.routes.draw do
 
   resources :topics do
      resources :posts, except: [:index]
-<<<<<<< HEAD
-=======
     #  resources :sponsored_posts, except: [:index]
->>>>>>> bloccit-checkpoint22
    end
 
   get 'about' => 'welcome#about'
