@@ -11,12 +11,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new({:title => params[:title], :body => params[:body]})
-    @topic = Topic.find(params[:topic_id])
-    @post.topic = @topic
-    # @post = Post.new
-    # @post.title = params[:post][:title]
-    # @post.body = params[:post][:body]
+    # @post = Post.new({:title => params[:title], :body => params[:body]})
+    # @topic = Topic.find(params[:topic_id])
+    # @post.topic = @topic
+      @post = Post.new
+      @post.title = params[:post][:title]
+      @post.body = params[:post][:body]
+      @topic = Topic.find(params[:topic_id])
+      @post.topic = @topic
     if @post.save
       flash[:notice] = "Post was saved successfully."
       redirect_to [@topic, @post]
@@ -31,10 +33,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    # @post = Post.find({:title => params[:title], :body => params[:body]})
      @post = Post.find(params[:id])
-     @post.title = params[:title]
-     @post.body = params[:body]
-
+     @post.title = params[:post][:title]
+     @post.body = params[:post][:body]
+      p @post
      if @post.save
        flash[:notice] = "Post was updated."
        redirect_to [@post.topic, @post]
