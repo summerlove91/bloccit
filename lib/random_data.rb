@@ -27,4 +27,14 @@ module RandomData
    def self.random_dollar
      "$" + rand(1..300).to_s
    end
+
+   def self.random_name
+     first_name = random_word.capitalize
+     last_name = random_word.capitalize
+     "#{first_name} #{last_name}"
+   end
+
+   def self.random_email
+     "#{random_word}@#{random_word}.#{random_word}"
+   end
  end

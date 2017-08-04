@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'random_data'
 
+ 5.times do
+   User.create!(
+   name:     RandomData.random_name,
+   email:    RandomData.random_email,
+   password: RandomData.random_sentence
+   )
+ end
+ users = User.all
+
 15.times do
    Topic.create!(
      name:         RandomData.random_sentence,
@@ -18,6 +27,7 @@ require 'random_data'
 
  50.times do
    Post.create!(
+     user: users.sample,
      topic:  topics.sample,
      title:  RandomData.random_sentence,
      body:   RandomData.random_paragraph
@@ -33,14 +43,14 @@ require 'random_data'
  end
 
 
- 5.times do
-   SponsoredPost.create!(
-    title: RandomData.random_sentence,
-    body: RandomData.random_paragraph,
-    price: RandomData.random_dollar
-   )
- end
- sponsored_posts = SponsoredPost.all
+ # 5.times do
+ #   SponsoredPost.create!(
+ #    title: RandomData.random_sentence,
+ #    body: RandomData.random_paragraph,
+ #    price: RandomData.random_dollar
+ #   )
+ # end
+ # sponsored_posts = SponsoredPost.all
 
 
  # 100.times do
@@ -51,9 +61,16 @@ require 'random_data'
  #    )
  #  end
 
+ user = User.first
+  user.update_attributes!(
+    email: 'gkdus3040@gmail.com', # replace this with your personal email
+    password: 'gkdus30'
+  )
+
  puts "Seed finished"
+ puts "#{User.count} users created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
  # puts "#{Question.count} questions created"
  puts "#{Topic.count} topics created"
- puts "#{SponsoredPost.count} topics created"
+ # puts "#{SponsoredPost.count} topics created"
