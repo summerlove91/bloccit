@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts
+  has_many :comments
   # attr_accessor :password, :password_confirmation
 
   before_save { self.email = email.downcase if email.present? }
