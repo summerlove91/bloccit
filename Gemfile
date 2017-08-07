@@ -20,6 +20,7 @@ source 'https://rubygems.org'
    gem 'rspec-rails' , '~> 3.6'
    gem 'rails-controller-testing'
    gem 'shoulda'
+   gem 'factory_girl_rails', '~> 4.0'
  end
 
  # Use SCSS for stylesheets
