@@ -5,6 +5,7 @@
 h1 {
    color: azure;
    font-family: 'Abril Fatface', cursive;
+   text-shadow: 1px 1px black;
  }
 
 .social-btn {
@@ -16,15 +17,36 @@ h1 {
 }
 
 .main-body {
-  background-color: skyblue;
+  // background-color: skyblue;
   text-align: center;
   height: 400px;
+  margin: 0;
+  background: asset-url('main-pic.png');
+  color: white;
 }
 
+.main-body-1 {
+  font-size: 20px;
+}
 
 .main-body-2{
-  background-color: lightgrey;
   text-align: center;
-  height: 500px;
+  height: 400px;
   margin: auto;
+}
+
+.nav-sign-ins {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 39px;
+  color: darkgrey;
+  text-shadow: 0.9px 0.6px black;
+}
+
+p{
+  font-size: 20px;
+  color: darkgrey;
+  text-shadow: 0.6px 0.6px black;
 }
