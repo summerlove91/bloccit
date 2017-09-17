@@ -3,8 +3,11 @@
 <head>
   <title>Bloccit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto',
+ media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,21 +15,20 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Bloccit", root_path %></li>
       <li><%= link_to "Topics", topics_path %></li>
-      <li><%= link_to "About", about_path %></li>
-
-      <div class="pull-right user-info">
+      <div class="pull-right user-options">
         <% if current_user %>
-          <%= image_tag avatar_url(current_user), class: :gravatar %>
-          <div class="pull-right">
-            <%= link_to current_user.name, user_path(current_user) %> <br/> <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+          <div class="pull-right user-path" style="margin-top: 20px; margin-right: 20px;">
+            <%= link_to current_user.name, user_path(current_user) %>
+            <%= link_to "Sign Out", session_path(current_user), method: :delete %>
           </div>
-          <% else %>
-            <%= link_to "Sign In", new_session_path %> or
-            <%= link_to "Sign Up", new_user_path %>
-          <% end %>
-     </div>
-    </ul>
+          <%= image_tag avatar_url(current_user), class: :gravatar %>
+        <% else %>
+          <%= link_to "Sign In", new_session_path %> or
+          <%= link_to "Sign Up", new_user_path %>
+        <% end %>
 
+      </div>
+    </ul>
     <% if flash[:notice] %>
        <div class="alert alert-success">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -38,10 +40,7 @@
          <%= flash[:alert] %>
        </div>
     <% end %>
-
-
     <%= yield %>
   </div>
-
 </body>
 </html>

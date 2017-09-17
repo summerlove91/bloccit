@@ -17,13 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .user-info {
-    margin-top: 9px;
-    margin-right: 9px;
-    display: inline-block;
+.nav-tabs{
+  margin-top: 20px;
+}
 
-  }
-
-  .nav {
-    margin-top: 5px;
-  }
+.user-path > li {
+  padding-left:20px;
+  padding-right:20px;
+}
