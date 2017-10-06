@@ -1,4 +1,4 @@
-![alt text](app/assets/images/img.png)
+![alt text](app/assets/images/screenshot.png)
 
 ## Bloccit
 
