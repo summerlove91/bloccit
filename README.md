@@ -1,3 +1,5 @@
+![alt text](app/images/img.png)
+
 ## Bloccit
 
 Just like Reddit, Bloccit is an app where people can post, vote on, share and save links and comments.
